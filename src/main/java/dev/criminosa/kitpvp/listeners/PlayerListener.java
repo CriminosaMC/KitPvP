@@ -55,13 +55,13 @@ public class PlayerListener implements Listener {
         // Add all the entries & suffixes
 
         divider1.addEntry("§7§m-----------");
-        divider2.addEntry("§7§m-----------");
+        divider2.addEntry("§7§m------------");
         kills.addEntry(StringUtils.cc("&6&lKills&7: "));
         deaths.addEntry(StringUtils.cc("&6&lDeaths&7: "));
         credits.addEntry(StringUtils.cc("&6&lCredits&7: "));
 
         divider1.setSuffix("-----------");
-        divider2.setSuffix("-----------");
+        divider2.setSuffix("----------");
         kills.setSuffix("");
         deaths.setSuffix("");
         credits.setSuffix("");
@@ -75,7 +75,7 @@ public class PlayerListener implements Listener {
         objective.getScore("§6§lKills§7: ").setScore(-2);
         objective.getScore("§6§lDeaths§7: ").setScore(-3);
         objective.getScore("§6§lCredits§7: ").setScore(-4);
-        objective.getScore("§7§m-----------").setScore(-5);
+        objective.getScore("§7§m------------").setScore(-5);
 
         // Schedule a task
 
