@@ -1,0 +1,6 @@
+name: KitPvP
+main: dev.criminosa.kitpvp.main.Main
+version: 1.0.0
+commands:
+  stats:
+    description: "Stats command"
