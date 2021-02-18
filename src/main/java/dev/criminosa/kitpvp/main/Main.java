@@ -24,7 +24,7 @@ public class Main extends JavaPlugin {
             return;
         }
         getLogger().info("Connected to database.");
-        getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         getCommand("stats").setExecutor(new CmdStats());
     }
 
