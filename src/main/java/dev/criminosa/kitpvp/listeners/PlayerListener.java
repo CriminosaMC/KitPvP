@@ -28,22 +28,17 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         User user = UserManager.addUser(event.getPlayer());
-
         // If user is not present in database, add them to the database
-
         if(!Database.isUserInDatabase(user)) Database.addUserToDatabase(user);
         event.setJoinMessage(null);
         user.sendMessage("&6&lKitPvP&8 »&7 Welcome back, &6" + user.getPlayer().getName() + "&7.");
-
         // Create the scoreboard and set it up
-
         Scoreboard scoreboard = plugin.getServer().getScoreboardManager().getNewScoreboard();
         Objective objective = scoreboard.registerNewObjective("KitPvP", "dummy");
+
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         objective.setDisplayName(StringUtils.cc("&6&lKitPvP &c[Beta]"));
-
         // Register all the teams
-
         Team divider1, divider2, kills, deaths, credits;
 
         divider1 = scoreboard.registerNewTeam("divider1");
@@ -51,9 +46,7 @@ public class PlayerListener implements Listener {
         kills = scoreboard.registerNewTeam("Kills");
         deaths = scoreboard.registerNewTeam("Deaths");
         credits = scoreboard.registerNewTeam("Credits");
-
         // Add all the entries & suffixes
-
         divider1.addEntry("§7§m-----------");
         divider2.addEntry("§7§m------------");
         kills.addEntry(StringUtils.cc("&6&lKills&7: "));
@@ -69,16 +62,13 @@ public class PlayerListener implements Listener {
         kills.setPrefix("");
         deaths.setPrefix("");
         credits.setPrefix("");
-
         // Set the scores
         objective.getScore("§7§m-----------").setScore(-1);
         objective.getScore("§6§lKills§7: ").setScore(-2);
         objective.getScore("§6§lDeaths§7: ").setScore(-3);
         objective.getScore("§6§lCredits§7: ").setScore(-4);
         objective.getScore("§7§m------------").setScore(-5);
-
         // Schedule a task
-
         Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
             kills.setSuffix("§6" + user.getKills());
             deaths.setSuffix("§6" + user.getDeaths());
