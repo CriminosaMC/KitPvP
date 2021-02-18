@@ -62,6 +62,10 @@ public class User {
         }
     }
 
+    public void onJoin() {
+
+    }
+
     public int getKills() {
         return kills;
     }

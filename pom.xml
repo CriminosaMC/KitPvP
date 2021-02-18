@@ -52,7 +52,7 @@
                         </goals>
 
                         <configuration>
-                            <outputFile>${project.basedir}/Server/plugins/TestPlugin.jar</outputFile>
+                            <outputFile>${project.basedir}/Server/plugins/KitPvP.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>
