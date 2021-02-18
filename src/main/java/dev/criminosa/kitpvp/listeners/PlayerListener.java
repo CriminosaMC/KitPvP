@@ -62,8 +62,6 @@ public class PlayerListener implements Listener {
         kills.setPrefix("");
         deaths.setPrefix("");
         credits.setPrefix("");
-
-        a
         // Set the scores
         objective.getScore("§7§m-----------").setScore(-1);
         objective.getScore("§6§lKills§7: ").setScore(-2);
