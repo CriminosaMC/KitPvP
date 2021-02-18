@@ -9,8 +9,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
     private static String connectionURL;
+    private static Main instance;
 
     public void onEnable() {
+        instance = this;
         // set up connection URI
         connectionURL = "jdbc:h2:" + getDataFolder().getAbsolutePath() + "/data/players";
         getLogger().info("Connecting to database...");
@@ -28,6 +30,10 @@ public class Main extends JavaPlugin {
 
     public static String getConnectionURL() {
         return connectionURL;
+    }
+
+    public static Main getInstance() {
+        return instance;
     }
 
 }
